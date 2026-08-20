@@ -1,0 +1,134 @@
+description,category
+swiggy food order,food
+swiggy dinner,food
+swiggy lunch,food
+swiggy breakfast,food
+zomato food order,food
+zomato dinner,food
+zomato lunch,food
+ordered food from restaurant,food
+restaurant dinner,food
+restaurant lunch,food
+restaurant bill,food
+pizza delivery,food
+dominos order,food
+mcdonalds meal,food
+kfc food order,food
+coffee at cafe,food
+cafe breakfast,food
+takeaway food,food
+food delivery,food
+dinner takeaway,food
+bigbasket groceries,groceries
+bigbasket order,groceries
+blinkit grocery order,groceries
+blinkit vegetables,groceries
+grocery shopping,groceries
+weekly groceries,groceries
+monthly grocery purchase,groceries
+supermarket shopping,groceries
+vegetable shopping,groceries
+fruit shopping,groceries
+milk and bread,groceries
+household groceries,groceries
+grocery store purchase,groceries
+daily groceries,groceries
+fresh vegetables,groceries
+household supplies,groceries
+uber ride,transport
+uber to office,transport
+uber cab,transport
+ola ride,transport
+ola cab to office,transport
+cab ride,transport
+taxi fare,transport
+metro recharge,transport
+metro card recharge,transport
+bus ticket,transport
+bus fare,transport
+auto rickshaw,transport
+auto fare,transport
+petrol station,transport
+petrol purchase,transport
+fuel payment,transport
+diesel purchase,transport
+fuel station,transport
+parking fee,transport
+parking payment,transport
+netflix subscription,entertainment
+netflix monthly payment,entertainment
+spotify subscription,entertainment
+spotify premium,entertainment
+youtube premium,entertainment
+movie tickets,entertainment
+cinema tickets,entertainment
+movie booking,entertainment
+concert ticket,entertainment
+gaming subscription,entertainment
+video game purchase,entertainment
+entertainment subscription,entertainment
+amazon shopping,shopping
+amazon order,shopping
+amazon electronics,shopping
+flipkart order,shopping
+flipkart shopping,shopping
+online shopping,shopping
+clothing purchase,shopping
+new shoes,shopping
+shirt purchase,shopping
+clothes shopping,shopping
+fashion purchase,shopping
+mall shopping,shopping
+electronics purchase,shopping
+headphones purchase,shopping
+phone accessories,shopping
+online purchase,shopping
+electricity bill,utilities
+electricity payment,utilities
+water bill,utilities
+water payment,utilities
+internet bill,utilities
+broadband bill,utilities
+wifi bill,utilities
+mobile recharge,utilities
+phone bill,utilities
+mobile bill,utilities
+gas bill,utilities
+gas payment,utilities
+utility bill payment,utilities
+electricity recharge,utilities
+internet subscription,utilities
+monthly electricity payment,utilities
+house rent,housing
+monthly rent,housing
+rent payment,housing
+apartment rent,housing
+flat rent,housing
+rent transfer,housing
+landlord payment,housing
+rental payment,housing
+monthly house rent,housing
+home rent,housing
+apartment rental,housing
+rent for apartment,housing
+housing payment,housing
+room rent,housing
+rent paid,housing
+monthly salary,income
+salary credit,income
+salary deposit,income
+salary received,income
+monthly paycheck,income
+paycheck received,income
+employee salary,income
+salary payment received,income
+freelance payment,income
+freelance income,income
+client payment,income
+client transfer,income
+project payment,income
+consulting income,income
+freelance project payment,income
+contract payment,income
+business income,income
+payment from client,income
