@@ -1,0 +1,267 @@
+description,category
+swiggy food order,food
+swiggy dinner,food
+swiggy lunch,food
+swiggy breakfast,food
+zomato food order,food
+zomato dinner,food
+zomato lunch,food
+ordered food from restaurant,food
+restaurant dinner,food
+restaurant lunch,food
+restaurant bill,food
+pizza delivery,food
+dominos order,food
+mcdonalds meal,food
+kfc food order,food
+coffee at cafe,food
+cafe breakfast,food
+takeaway food,food
+food delivery,food
+dinner takeaway,food
+bigbasket groceries,groceries
+bigbasket order,groceries
+blinkit grocery order,groceries
+blinkit vegetables,groceries
+grocery shopping,groceries
+weekly groceries,groceries
+monthly grocery purchase,groceries
+supermarket shopping,groceries
+vegetable shopping,groceries
+fruit shopping,groceries
+milk and bread,groceries
+household groceries,groceries
+grocery store purchase,groceries
+daily groceries,groceries
+fresh vegetables,groceries
+household supplies,groceries
+uber ride,transport
+uber to office,transport
+uber cab,transport
+ola ride,transport
+ola cab to office,transport
+cab ride,transport
+taxi fare,transport
+metro recharge,transport
+metro card recharge,transport
+bus ticket,transport
+bus fare,transport
+auto rickshaw,transport
+auto fare,transport
+petrol station,transport
+petrol purchase,transport
+fuel payment,transport
+diesel purchase,transport
+fuel station,transport
+parking fee,transport
+parking payment,transport
+netflix subscription,entertainment
+netflix monthly payment,entertainment
+spotify subscription,entertainment
+spotify premium,entertainment
+youtube premium,entertainment
+movie tickets,entertainment
+cinema tickets,entertainment
+movie booking,entertainment
+concert ticket,entertainment
+gaming subscription,entertainment
+video game purchase,entertainment
+entertainment subscription,entertainment
+amazon shopping,shopping
+amazon order,shopping
+amazon electronics,shopping
+flipkart order,shopping
+flipkart shopping,shopping
+online shopping,shopping
+clothing purchase,shopping
+new shoes,shopping
+shirt purchase,shopping
+clothes shopping,shopping
+fashion purchase,shopping
+mall shopping,shopping
+electronics purchase,shopping
+headphones purchase,shopping
+phone accessories,shopping
+online purchase,shopping
+electricity bill,utilities
+electricity payment,utilities
+water bill,utilities
+water payment,utilities
+internet bill,utilities
+broadband bill,utilities
+wifi bill,utilities
+mobile recharge,utilities
+phone bill,utilities
+mobile bill,utilities
+gas bill,utilities
+gas payment,utilities
+utility bill payment,utilities
+electricity recharge,utilities
+internet subscription,utilities
+monthly electricity payment,utilities
+house rent,housing
+monthly rent,housing
+rent payment,housing
+apartment rent,housing
+flat rent,housing
+rent transfer,housing
+landlord payment,housing
+rental payment,housing
+monthly house rent,housing
+home rent,housing
+apartment rental,housing
+rent for apartment,housing
+housing payment,housing
+room rent,housing
+rent paid,housing
+monthly salary,income
+salary credit,income
+salary deposit,income
+salary received,income
+monthly paycheck,income
+paycheck received,income
+employee salary,income
+salary payment received,income
+freelance payment,income
+freelance income,income
+client payment,income
+client transfer,income
+project payment,income
+consulting income,income
+freelance project payment,income
+contract payment,income
+business income,income
+payment from client,income
+swiggy bought groceries at dmart,food
+metro uber ride to office,transport
+mall clothes from zara,shopping
+electricity board electricity bill payment bescom,utilities
+apollo doctor consultation fee,health
+pvr movie tickets pvr inox,entertainment
+udemy udemy course online learning,education
+oyo hotel booking oyo makemytrip,travel
+nykaa face wash cetaphil,personal_care
+reliance digital laptop purchase dell hp,electronics
+atm miscellaneous expense,other
+jio wifi bill,utilities
+bank bank charges,other
+mall payment,shopping
+medplus pharmacy,health
+atm bank charges,other
+reliance digital payment,electronics
+college books purchase,education
+pvr spotify premium,entertainment
+apollo pharmacy,health
+croma laptop repair,electronics
+udemy payment,education
+mall clothes shopping,shopping
+atm cash withdrawal,other
+nykaa salon visit,personal_care
+airtel payment,utilities
+zomato payment,food
+bank payment,other
+oyo hotel stay,travel
+amazon amazon purchase,shopping
+irctc hotel stay,travel
+oyo train ticket,travel
+apollo payment,health
+oyo trip package,travel
+croma charger buy,electronics
+amazon flipkart order,shopping
+jio gas bill,utilities
+swiggy zomato order,food
+salon shampoo purchase,personal_care
+college payment,education
+zomato zomato order,food
+medplus doctor visit,health
+croma payment,electronics
+uber ola cab,transport
+reliance digital phone purchase,electronics
+udemy books purchase,education
+college course fee,education
+medplus hospital bill,health
+udemy course fee,education
+college tuition fee,education
+uber payment,transport
+apollo medicine purchase,health
+swiggy swiggy delivery,food
+bank cash withdrawal,other
+ola petrol refill,transport
+medplus payment,health
+flipkart amazon purchase,shopping
+ola metro recharge,transport
+mall amazon purchase,shopping
+flipkart flipkart order,shopping
+local hotel zomato order,food
+metro metro recharge,transport
+pvr movie ticket,entertainment
+jio mobile recharge,utilities
+airtel wifi bill,utilities
+local hotel payment,food
+mall mall shopping,shopping
+reliance digital charger buy,electronics
+irctc trip package,travel
+apollo doctor visit,health
+salon skincare products,personal_care
+reliance digital laptop repair,electronics
+swiggy biryani order,food
+salon salon visit,personal_care
+irctc flight booking,travel
+nykaa skincare products,personal_care
+pvr payment,entertainment
+metro ola cab,transport
+metro payment,transport
+netflix payment,entertainment
+pvr netflix subscription,entertainment
+flipkart payment,shopping
+swiggy payment,food
+bank misc expense,other
+electricity board wifi bill,utilities
+ola ola cab,transport
+apollo hospital bill,health
+zomato biryani order,food
+croma phone purchase,electronics
+netflix spotify premium,entertainment
+udemy exam fee,education
+netflix netflix subscription,entertainment
+swiggy dosa breakfast,food
+amazon payment,shopping
+atm payment,other
+zomato dosa breakfast,food
+uber metro recharge,transport
+metro uber ride,transport
+uber petrol refill,transport
+college exam fee,education
+amazon clothes shopping,shopping
+nykaa payment,personal_care
+zomato swiggy delivery,food
+irctc train ticket,travel
+electricity board mobile recharge,utilities
+atm misc expense,other
+ola payment,transport
+netflix movie ticket,entertainment
+flipkart mall shopping,shopping
+oyo flight booking,travel
+flipkart clothes shopping,shopping
+jio payment,utilities
+electricity board electricity bill,utilities
+metro petrol refill,transport
+local hotel dosa breakfast,food
+electricity board payment,utilities
+airtel mobile recharge,utilities
+salon payment,personal_care
+jio electricity bill,utilities
+amazon mall shopping,shopping
+airtel gas bill,utilities
+nykaa shampoo purchase,personal_care
+mall flipkart order,shopping
+irctc payment,travel
+uber uber ride,transport
+local hotel biryani order,food
+airtel electricity bill,utilities
+oyo payment,travel
+medplus medicine purchase,health
+electricity board gas bill,utilities
+udemy tuition fee,education
+ola uber ride,transport
+local hotel swiggy delivery,food

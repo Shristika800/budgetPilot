@@ -11,7 +11,7 @@ from sklearn.pipeline import Pipeline
 
 
 BASE_DIR = Path(__file__).resolve().parents[2]
-DATA_PATH = BASE_DIR / "data" / "transactions.csv"
+DATA_PATH = BASE_DIR / "data" / "training_transactions.csv"
 MODEL_DIR = BASE_DIR / "ml" / "models"
 MODEL_PATH = MODEL_DIR / "transaction_categorizer.joblib"
 
