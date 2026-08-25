@@ -1,69 +1,51 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
 import type { TransactionSummary } from "../types/transaction";
+import SummaryCards from "../components/dashboard/SummaryCards";
+import CategoryBreakdown from "../components/dashboard/CategoryBreakdown";
 
-function Dashboard() {
+interface Props {
+  /** Incremented when a transaction is added elsewhere (e.g. from Transactions view) */
+  refreshKey?: number;
+}
+
+function Dashboard({ refreshKey = 0 }: Props) {
   const [summary, setSummary] = useState<TransactionSummary | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    async function fetchSummary() {
-      try {
-        const response = await api.get<TransactionSummary>(
-          "/transactions/summary"
-        );
+    setLoading(true);
+    setError(false);
 
-        setSummary(response.data);
-      } catch (error) {
-        console.error("Failed to fetch summary:", error);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchSummary();
-  }, []);
+    api
+      .get<TransactionSummary>("/transactions/summary")
+      .then((res) => setSummary(res.data))
+      .catch(() => setError(true))
+      .finally(() => setLoading(false));
+  }, [refreshKey]);
 
   if (loading) {
-    return <div>Loading dashboard...</div>;
+    return <p className="loading-text">Loading dashboard...</p>;
   }
 
-  if (!summary) {
-    return <div>Unable to load dashboard.</div>;
+  if (error || !summary) {
+    return <p className="empty-state">Unable to load dashboard. Is the backend running?</p>;
   }
 
   return (
-    <main>
-      <h1>BudgetPilot</h1>
+    <div className="dashboard">
+      <div className="section-header">
+        <h2>Overview</h2>
+        <p>Your financial snapshot</p>
+      </div>
 
-      <section>
-        <div>
-          <h2>Income</h2>
-          <p>₹{summary.total_income.toFixed(2)}</p>
-        </div>
+      <SummaryCards summary={summary} />
 
-        <div>
-          <h2>Expenses</h2>
-          <p>₹{summary.total_expenses.toFixed(2)}</p>
-        </div>
-
-        <div>
-          <h2>Balance</h2>
-          <p>₹{summary.balance.toFixed(2)}</p>
-        </div>
-      </section>
-
-      <section>
-        <h2>Spending by Category</h2>
-
-        {summary.spending_by_category.map((item) => (
-          <div key={item.category}>
-            <span>{item.category}</span>
-            <span>₹{item.amount.toFixed(2)}</span>
-          </div>
-        ))}
-      </section>
-    </main>
+      <div className="dashboard-bottom">
+        <CategoryBreakdown categories={summary.spending_by_category} />
+      </div>
+    </div>
   );
 }
 

@@ -22,3 +22,9 @@ export interface TransactionSummary {
   balance: number;
   spending_by_category: SpendingCategory[];
 }
+
+export interface ChatMessage {
+  id: number;
+  role: "user" | "assistant";
+  text: string;
+}

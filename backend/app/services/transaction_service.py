@@ -11,7 +11,8 @@ def create_transaction(
     transaction_type: str,
     transaction_date,
 ):
-    prediction = predict_category(description)
+    # Pass transaction_type so income transactions skip the expense categorizer.
+    prediction = predict_category(description, transaction_type=transaction_type)
 
     transaction = Transaction(
         description=description,

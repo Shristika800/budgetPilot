@@ -1,6 +1,6 @@
-from datetime import datetime
+from datetime import datetime, timezone
 
-from sqlalchemy import DateTime, Float, String, Text
+from sqlalchemy import CheckConstraint, DateTime, Numeric, String, Text
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db.database import Base
@@ -13,7 +13,9 @@ class Transaction(Base):
 
     description: Mapped[str] = mapped_column(Text, nullable=False)
 
-    amount: Mapped[float] = mapped_column(Float, nullable=False)
+    # Numeric(12, 2) avoids IEEE 754 floating-point precision errors
+    # that Float would introduce for financial amounts.
+    amount: Mapped[float] = mapped_column(Numeric(12, 2), nullable=False)
 
     category: Mapped[str | None] = mapped_column(
         String(100),
@@ -21,7 +23,7 @@ class Transaction(Base):
     )
 
     confidence: Mapped[float | None] = mapped_column(
-        Float,
+        Numeric(5, 4),
         nullable=True,
     )
 
@@ -37,5 +39,16 @@ class Transaction(Base):
 
     created_at: Mapped[datetime] = mapped_column(
         DateTime,
-        default=datetime.utcnow,
+        default=lambda: datetime.now(tz=timezone.utc).replace(tzinfo=None),
+    )
+
+    __table_args__ = (
+        CheckConstraint(
+            "transaction_type IN ('income', 'expense')",
+            name="ck_transaction_type",
+        ),
+        CheckConstraint(
+            "amount > 0",
+            name="ck_amount_positive",
+        ),
     )

@@ -1,13 +1,13 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from datetime import datetime
+from datetime import datetime, timezone
 
 from app.db.dependencies import get_db
 from app.schemas.chat import ChatRequest, ChatResponse
 from app.services.chat_service import extract_transaction
 from app.services.intent_service import detect_intent
 from app.services.summary_service import get_summary
-from app.services.data_service import detect_period, get_date_range
+from app.services.data_service import detect_period, get_date_range, strip_period_words
 from app.services.advice_service import generate_advice
 from app.services.transaction_service import create_transaction
 from app.models.transaction import Transaction
@@ -46,7 +46,7 @@ def chat(
             description=transaction_data["description"],
             amount=transaction_data["amount"],
             transaction_type=transaction_data["transaction_type"],
-            transaction_date=datetime.utcnow(),
+            transaction_date=datetime.now(tz=timezone.utc).replace(tzinfo=None),
         )
 
         if transaction.category == "uncategorized":
@@ -109,9 +109,21 @@ def chat(
 
         keyword = message.split(" on ", 1)[1]
         keyword = keyword.strip(" ?.!,")
-        
-        # Detect time period
+
+        # Detect time period before stripping period words from the keyword.
         period = detect_period(message)
+
+        # Strip period phrases from the keyword so "food last month" → "food".
+        keyword = strip_period_words(keyword)
+
+        if not keyword:
+            return ChatResponse(
+                message=(
+                    "Tell me what you want to check, "
+                    "for example: 'How much did I spend on food?'"
+                )
+            )
+
         start_date, end_date = get_date_range(period)
 
         date_filters = []
@@ -126,11 +138,15 @@ def chat(
                 Transaction.transaction_date < end_date
             )
 
+        # Escape SQL wildcard characters so "%" and "_" in user input
+        # don't accidentally match everything in the ilike query.
+        safe_keyword = keyword.replace("\\", "\\\\").replace("%", r"\%").replace("_", r"\_")
+
         # Check category first
         category_transactions = (
             db.query(Transaction)
             .filter(
-                Transaction.category.ilike(keyword)
+                Transaction.category.ilike(safe_keyword, escape="\\")
             )
             .filter(
                 Transaction.transaction_type == "expense"
@@ -153,7 +169,7 @@ def chat(
         transactions = (
             db.query(Transaction)
             .filter(
-                Transaction.description.ilike(f"%{keyword}%")
+                Transaction.description.ilike(f"%{safe_keyword}%", escape="\\")
             )
             .filter(
                 Transaction.transaction_type == "expense"

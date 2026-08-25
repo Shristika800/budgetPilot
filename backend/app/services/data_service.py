@@ -44,4 +44,28 @@ def detect_period(message: str) -> str:
     if "this month" in message:
         return "this_month"
 
-    return "this_month"
+    # No period keyword found — return all_time so the caller can decide
+    # whether to apply a default filter rather than silently scoping to
+    # the current month.
+    return "all_time"
+
+
+# Period-related words that must be stripped from a search keyword before
+# querying the database (e.g. "food last month" → "food").
+_PERIOD_PHRASES = [
+    "last month",
+    "this month",
+    "today",
+    "this week",
+    "last week",
+    "this year",
+    "last year",
+]
+
+
+def strip_period_words(text: str) -> str:
+    """Remove time-period phrases from a keyword string."""
+    result = text.lower()
+    for phrase in _PERIOD_PHRASES:
+        result = result.replace(phrase, "")
+    return result.strip(" ?.!,")

@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Query
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 from app.db.dependencies import get_db
@@ -17,7 +17,7 @@ def create_transaction(
     return create_transaction_service(
         db=db,
         description=transaction.description,
-        amount=transaction.amount,
+        amount=float(transaction.amount),
         transaction_type=transaction.transaction_type,
         transaction_date=transaction.transaction_date,
     )
@@ -25,11 +25,15 @@ def create_transaction(
 
 @router.get("/", response_model=list[TransactionResponse])
 def get_transactions(
+    skip: int = Query(default=0, ge=0),
+    limit: int = Query(default=50, ge=1, le=500),
     db: Session = Depends(get_db),
 ):
     return (
         db.query(Transaction)
         .order_by(Transaction.transaction_date.desc())
+        .offset(skip)
+        .limit(limit)
         .all()
     )
 
