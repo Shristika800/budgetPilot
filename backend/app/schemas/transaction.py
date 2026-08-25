@@ -30,6 +30,8 @@ class TransactionResponse(BaseModel):
     transaction_type: str
     transaction_date: datetime
     created_at: datetime
+    is_anomaly: bool
+    anomaly_reason: str | None
 
     model_config = {
         "from_attributes": True

@@ -9,6 +9,8 @@ export interface Transaction {
   transaction_type: TransactionType;
   transaction_date: string;
   created_at: string;
+  is_anomaly: boolean;
+  anomaly_reason: string | null;
 }
 
 export interface SpendingCategory {
@@ -21,6 +23,20 @@ export interface TransactionSummary {
   total_expenses: number;
   balance: number;
   spending_by_category: SpendingCategory[];
+}
+
+export interface TrendPoint {
+  date: string;
+  amount: number;
+}
+
+export interface BudgetProgress {
+  id: number;
+  category: string;
+  monthly_limit: number;
+  spent: number;
+  remaining: number;
+  percent_used: number;
 }
 
 export interface ChatMessage {
